@@ -14,7 +14,7 @@ function changeTolastName(){
 </script>
 
 <template>
-   <div>
+   <div class="z-100">
 
 
     {{ name }}

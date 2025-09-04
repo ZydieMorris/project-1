@@ -29,7 +29,7 @@ const doubleTemperature = computed(() =>{
 
 <template>
 
-    <div>
+    <div >
 
 <h1>Temp: {{ temp }}</h1>
 <h1>Double Temp: {{ doubleTemperature }}</h1>
