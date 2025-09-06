@@ -3,7 +3,7 @@ import ProfileCard from '../components/ProfileCard.vue';
 import SkillsCard from '../components/SkillsCard.vue';
 import SocialMediaCard from '../components/SocialMediaCard.vue';
 import Thirdbox from '../components/Thirdbox.vue';
-
+import AllButton from '../components/AllButton.vue'
 
 </script>
 
@@ -21,9 +21,10 @@ import Thirdbox from '../components/Thirdbox.vue';
             <SocialMediaCard />
             <SkillsCard />
             <Thirdbox />
+            
         </div>
         <!-- Main Content end -->
-       
+       <AllButton>Next</AllButton>
     </div>
     
     <marquee behavior="" direction="right">

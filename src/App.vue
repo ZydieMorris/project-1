@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Navbar from './components/Navbar.vue';
-import Sidebar from './components/Sidebar.vue';
+
 
 
 
@@ -10,7 +10,6 @@ import Sidebar from './components/Sidebar.vue';
 
 
  <Navbar />
- <Sidebar/>
 <router-view></router-view>
 
 
