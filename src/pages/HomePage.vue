@@ -39,14 +39,20 @@ function hide() {
   </div>
 
   <!-- Buttons -->
-  <div class="flex space-x-25 z-100 absolute bottom-10 left-1/2 -translate-x-1/2">
-    <AllButton @click="hide">
+  <div class="flex space-x-25 z-100 absolute bottom-10 left-1/2 -translate-x-1/2 ">
+    <AllButton @click="hide" class="p-4">
       Hide
     </AllButton>
-    <AllButton @click="show">
+    <AllButton @click="show" class="p-4">
       Show
     </AllButton>
   </div>
+  <div class="absolute bottom-10 -right-20 left-1/2 -translate-x-1/2">
+      <AllButton class="pl-5 pr-5 pt-2 pb-2 ">
+        <RouterLink to="/about" >Next</RouterLink>
+    </AllButton>
+  </div>
+  
 
 
 

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import AboutDecription from '../components/AboutDecription.vue';
 import AboutPic from '../components/AboutPic.vue';
+import AllButton from '../components/AllButton.vue';
 </script>
 
 <template>
@@ -9,5 +10,14 @@ import AboutPic from '../components/AboutPic.vue';
         <AboutPic />
         <AboutDecription />
     </div>
-    <AllButton>Back</AllButton>
+    <!-- Buttons -->
+     <div class="absolute left-50 bottom-0 flex -space-x-290">
+        <AllButton class="p-3">
+            <RouterLink to="/news">Next</RouterLink>
+        </AllButton>
+        <AllButton class="p-3">
+            <RouterLink to="/">Back</RouterLink>
+        </AllButton>
+     </div>
+    
 </template>

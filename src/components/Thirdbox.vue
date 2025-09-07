@@ -4,5 +4,4 @@
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea recusandae adipisci aperiam sunt incidunt dignissimos distinctio minus obcaecati vitae, illo labore ipsam in temporibus saepe illum ut doloribus numquam necessitatibus.
                 </div>
             </div>
-
 </template>
