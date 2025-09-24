@@ -1,0 +1,42 @@
+featuresProps
+
+<script setup>
+defineProps({
+  text: String,
+  description: String,
+  learnmore: String,
+  image: String
+})
+</script>
+
+<template>
+  <main class="flex  w-[1195px] h-[358.18px] relative  left-1/2 -translate-x-1/2">
+    <!-- LEFT SIDE  -->
+    <div class="relative z-20 flex flex-col space-y-5 w-1/2 [&_p]:text-[#696984] [&_p]:leading-[180%]">
+      <!-- bilog -->
+      <div class="w-[56.39px] h-[53px] bg-[#388FF0] rounded-[120%] absolute top-9 left-1 z-10"></div>
+      <div class="w-[23px] h-[21px] bg-[#388FF0] rounded-[120%] absolute top-48 left-135 z-10"></div>
+
+      <!-- Content -->
+      <div class="relative px-6 py-10 z-20 flex flex-col space-y-[21px] [&_p]:text-[#696984] [&_p]:leading-[180%]">
+        <h1 class="text-[25px] font-medium leading-[160%]">
+          The QUEWIE Features:
+          <span v-if="text" class="text-[#388FF0]">
+            {{ text }}
+          </span>
+        </h1>
+        <p class="text-[20px] tracking-[2%]">{{ description }}</p>
+        <p v-if="learnmore" class="underline text-[22px] hover:cursor-pointer">
+          {{ learnmore }}
+        </p>
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="p-4 relative flex items-center justify-center w-1/2">
+      <div class="w-[106.6px] h-[96.54px] rounded-[20px] bg-[#272727] absolute top-0 left-0"></div>
+      <div class="w-[178.44px] h-[161.6px] rounded-[20px] bg-[#388FF0] absolute right-0 bottom-0"></div>
+      <img :src="image" class="z-20 relative  h-auto" />
+    </div>
+  </main>
+</template>
