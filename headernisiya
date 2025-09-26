@@ -1,0 +1,166 @@
+header
+
+
+
+<script setup>
+import { ref, watch } from "vue"
+import HomePageButton from "./HomePageButton.vue"
+
+const isOpen = ref(false)
+
+// Prevent scrolling when menu is open
+watch(isOpen, (val) => {
+  document.body.style.overflow = val ? "hidden" : ""
+})
+</script>
+
+<template>
+  <header
+    class="header bg-white z-50 flex items-center justify-between fixed w-full h-[94px] px-6 lg:px-12 shadow-md"
+  >
+    <!-- Logo -->
+    <div>
+      <img src="/images/QuewiLogo.png" class="w-[150px] lg:w-[206px] h-auto" />
+    </div>
+
+    <!-- Desktop Nav (only visible on lg and up) -->
+    <nav
+      class="hidden lg:flex space-x-10 xl:space-x-20 text-base font-medium"
+    >
+      <RouterLink
+        to="/"
+        class="hover:text-[#388FF0]"
+        active-class="text-[#388FF0] font-semibold"
+      >
+        HOME
+      </RouterLink>
+      <RouterLink
+        to="/aboutus"
+        class="hover:text-[#388FF0]"
+        active-class="text-[#388FF0] font-semibold"
+      >
+        ABOUT US
+      </RouterLink>
+      <RouterLink
+        to="/features"
+        class="hover:text-[#388FF0]"
+        active-class="text-[#388FF0] font-semibold"
+      >
+        FEATURES
+      </RouterLink>
+      <RouterLink
+        to="/solutions"
+        class="hover:text-[#388FF0]"
+        active-class="text-[#388FF0] font-semibold"
+      >
+        SOLUTIONS
+      </RouterLink>
+    </nav>
+
+    <!-- Login/Signup (desktop, lg and up only) -->
+    <div class="hidden lg:flex space-x-4">
+      <button class="hover:text-[#388FF0]">Login</button>
+      <HomePageButton class="w-[96px] h-[32px]">Signup</HomePageButton>
+    </div>
+
+    <!-- Mobile/Tablet Menu Button -->
+    <button @click="isOpen = !isOpen" class="lg:hidden focus:outline-none">
+      <!-- Hamburger Icon -->
+      <svg
+        v-if="!isOpen"
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-8 w-8"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"
+        />
+      </svg>
+
+      <!-- Close Icon -->
+      <svg
+        v-else
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-8 w-8"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"
+        />
+      </svg>
+    </button>
+
+    <!-- Mobile/Tablet Dropdown -->
+    <transition name="fade">
+      <div
+        v-if="isOpen"
+        class="absolute top-[94px] left-0 w-full bg-white flex flex-col items-center space-y-6 py-6 shadow-lg lg:hidden"
+      >
+        <RouterLink
+          to="/"
+          class="hover:text-[#388FF0]"
+          @click="isOpen = false"
+        >
+          HOME
+        </RouterLink>
+        <RouterLink
+          to="/aboutus"
+          class="hover:text-[#388FF0]"
+          @click="isOpen = false"
+        >
+          ABOUT US
+        </RouterLink>
+        <RouterLink
+          to="/features"
+          class="hover:text-[#388FF0]"
+          @click="isOpen = false"
+        >
+          FEATURES
+        </RouterLink>
+        <RouterLink
+          to="/solutions"
+          class="hover:text-[#388FF0]"
+          @click="isOpen = false"
+        >
+          SOLUTIONS
+        </RouterLink>
+
+        <!-- Full-width buttons -->
+        <div class="flex flex-col w-full px-6 space-y-4">
+          <button
+            class="w-full py-2 border border-gray-300 rounded-md hover:bg-gray-100 transition"
+            @click="isOpen = false"
+          >
+            Login
+          </button>
+          <HomePageButton class="w-full h-[40px]">Signup</HomePageButton>
+        </div>
+      </div>
+    </transition>
+  </header>
+</template>
+
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.3s ease;
+}
+.fade-enter-from {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+.fade-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+</style>
