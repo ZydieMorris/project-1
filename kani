@@ -12,3 +12,6 @@
                 <NuxtImg :src="image" alt="Features Learnmore" class="absolute inset-0 w-full h-full object-contain" />
             </div>
         </div>
+
+
+https://www.figma.com/design/O24wNtVAdSQSpQxZFoJE6M/HOMI?node-id=0-1&p=f&t=kGOqd8BX9UDYtx4F-0
